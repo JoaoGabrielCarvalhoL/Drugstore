@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/drugstore?useTimezone=true&amp;serverTimezone=UTC</property>
+		<property name="connection.username">adm</property>
+		<property name="connection.password">123456789</property>
+
+		<property name="connection.pool_size">1</property>
+
+		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+		<property name="current_session_context_class">thread</property>
+
+		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+		<property name="show_sql">true</property>
+
+		<property name="hbm2ddl.auto">validate</property>
+		
+		<mapping class="br.com.carv.drugstore.domain.State"/>
+		<mapping class="br.com.carv.drugstore.domain.City"/>
+		<mapping class="br.com.carv.drugstore.domain.Manufacturer"/>
+		<mapping class="br.com.carv.drugstore.domain.Product"/>
+		<mapping class="br.com.carv.drugstore.domain.Client"/>
+		<mapping class="br.com.carv.drugstore.domain.Employee"/>
+		<mapping class="br.com.carv.drugstore.domain.User"/>
+		<mapping class="br.com.carv.drugstore.domain.Sale"/>
+		<mapping class="br.com.carv.drugstore.domain.ItemSale"/>
+
+	</session-factory>
+
+</hibernate-configuration>
